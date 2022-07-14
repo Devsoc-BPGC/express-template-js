@@ -9,12 +9,5 @@
     "bracketSpacing": true,
     "bracketSameLine": false,
     "arrowParens": "avoid",
-    "endOfLine": "lf",
-    "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/.DS_Store": true,
-        ".vscode": true
-    }
+    "endOfLine": "lf"
 }
