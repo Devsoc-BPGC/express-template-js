@@ -7,6 +7,10 @@
 var app = require('../app');
 var debug = require('debug')('express-template:server');
 var http = require('http');
+var https = require('https');
+var fs = require('fs');
+
+var isHTTPS = process.env.HTTPS === 1
 
 /**
  * Get port from environment and store in Express.
@@ -19,7 +23,9 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+var server = isHTTPS ? 
+  https.createServer({key: fs.readFileSync(process.env.HTTPS_CERT_KEY, 'utf8'), cert: fs.readFileSync(process.env.HTTPS_CERT, 'utf8')}, app):
+  http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
