@@ -8,6 +8,7 @@ module.exports = {
         HTTPS: 1,
         HTTPS_CERT: '',
         HTTPS_CERT_KEY: '',
+        MONGO_URL: '',
       },
       env_development: {
         NODE_ENV: 'development',
